@@ -12,6 +12,9 @@ class Card;
 
 using namespace std;
 
+/*!
+ * \brief Abstract Hero class. It's parent for all types of heroes (mage, warrior, ..)
+ */
 class Hero {
 protected:
     const string   name;
@@ -27,6 +30,11 @@ public:
     Hero ( const string & name, HeroType type, int maxHealth, int maxMana );
     virtual ~Hero();
 
+    /*!
+     * \brief Virtual method for removing health of a Hero. In some types of heroes wee need to overwrite this method
+     * to do something different (mage and his shield).
+     * \param amount - amount of health to be removed
+     */
     virtual void removeHealth ( int amount );
     void addHealth    ( int amount );
 

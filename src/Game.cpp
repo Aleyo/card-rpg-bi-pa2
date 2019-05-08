@@ -16,7 +16,12 @@ Game::Game(Hero * player1, Hero * player2, bool vsAI)
 Game::Game( const string & src ) {
     this->initGameLoad();
     IOhandler h(src);
-    h.loadGame( this );
+    bool checkLoad = h.loadGame( this );
+    if (!checkLoad) {
+        cout << "Save file (src/save.txt) is broken." << endl;
+        return;
+    }
+
     this->gameLoop();
     if (this->gameState == GameState::GAME_OVER) {
         printWinner(cout, *this->onTurn);
@@ -53,7 +58,11 @@ void Game::initGame() {
 
 void Game::loadCardDefinitions() {
     IOhandler h("./examples/cards.txt");
-    h.loadCardDefinition(this->cards);
+    bool loaded = h.loadCardDefinition(this->cards);
+    if (!loaded) {
+        cout << "Card definition file (src/cards.txt) is broken. " << endl;
+        exit(1);
+    }
 }
 
 void Game::createDeck( Hero * p ) {
