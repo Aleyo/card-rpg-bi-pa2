@@ -1,0 +1,68 @@
+#########################################################################
+# Card template:							#
+#	1st row: Card id (need to be unieque for each card)		#
+#	2nd row: Name of the card					#
+#	3th row: Class type (warrior/mage)				#
+#	4th row: Mana cost ( greater or equal to 0)			#
+#	5th row: Text of the card					#
+#	6th - Nth row: Actuall effects of the card (minimum 1 effect)	#
+#									#
+# Formating rules:							#
+#	- All rows are mandatory					#
+#	- You need to follow order of attributes			#
+#	- Every card needs to end with empty line			#
+#	- Comments are just single-row and first character		#
+#	  of the line needs to be '#'					#
+#########################################################################
+0
+Attack
+warrior
+2
+Deal 10 damage.
+enemy health -10
+
+1
+Shield shot
+mage
+2
+Give you +9 shield and deal 5 damage to opponent.
+me shield +9
+enemy health -5
+
+2
+Bandage
+warrior
+3
+Heal 7 health.
+me health +7
+
+3
+Fireball
+mage
+5
+Deal 20 damage to opponent.
+enemy health -20
+
+4
+Shield barrier
+mage
+3
+Give you +15 shield.
+me shield +15
+
+5
+Enrage
+warrior
+4
+Deal 20 damage to opponent and damage you for 7 health.
+enemy health -20
+me health -5
+
+6
+Mana unleash
+mage
+3
+Deal 25 damage to opponent and give your opponent +4 mana.
+enemy health -17
+enemy mana +4
+
