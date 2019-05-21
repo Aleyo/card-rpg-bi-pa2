@@ -5,8 +5,14 @@
 #include "OutFunctions.h"
 #include "IOhandler.h"
 
+/*!
+ * \brief Enum for state of a game (running, game over).
+ */
 enum class GameState : char;
 
+/*!
+ * \brief This class stores details about the specified game.
+ */
 class Game {
 private:
     bool vsAI;
@@ -26,16 +32,39 @@ private:
     void initGame();
     void initGameLoad();
     void loadCardDefinitions();
+
+    /*!
+     * \brief Is responsible of cycle of a game. Check if you are on turn or waiting, check input from a player
+     * (which card he wants to play) and so.
+     */
     void gameLoop();
     void setStartingPlayer();
+
+    /*!
+     * \brief This fills the deck of a specified player with random cards loaded from definitions
+     * on the start of a game.
+     * \param p - pointer to hero who's deck should be filled.
+     */
     void createDeck( Hero * p );
+
+    /*!
+     * \brief This fills the hand of a specified player on the start of a game.
+     * \param p - pointer to hero who's hand should be filled
+     */
     void giveCards( Hero * p );
+
+    /*!
+     * \brief Get the decision of AI (if playing vs one) on which option to choose (cards, next turn, ...).
+     */
     char getAIDecision();
 public:
     Game ( Hero * player1, Hero * player2, bool vsAI );
     Game ( const string & src );
     ~Game ();
 
+    /*!
+     * \brief End turn for playing player and start turn for other one.
+     */
     void nextTurn();
 
     int getTurn() const { return this->turn; }

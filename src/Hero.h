@@ -41,9 +41,29 @@ public:
     void removeMana ( int amount );
     void addMana    ( int amount );
 
+    /*!
+     * \brief Method for inserting card into players deck
+     * \param c - card instance to be inserted
+     */
     void insertIntoDeck ( Card * c );
+
+    /*!
+     * \brief Method for inserting card into players hand
+     * \param c - card instance to be inserted
+     */
     void insertIntoHand ( Card * c );
+
+    /*!
+     * \brief Method for drawing card from deck. This method draws the top x cards from his deck. If the deck is empty
+     * then it does nothing.
+     * \param count - number of cards to be drawn
+     */
     void drawCard( int count );
+
+    /*!
+     * \brief Removes card from players hand on specified index.
+     * \param index - index of a card to be removed
+     */
     void removeCardHand( int index );
 
     vector<Card *> getHand() const { return this->hand; }

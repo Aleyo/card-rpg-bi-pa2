@@ -15,7 +15,4 @@ public:
     Warrior ( const string & name );
 };
 
-
-
-
 #endif //CARDRPG_WARRIOR_H

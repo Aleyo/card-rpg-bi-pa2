@@ -12,6 +12,9 @@ class Game;
 
 using namespace std;
 
+/*!
+ * \brief Class that parse files and load them.
+ */
 class IOhandler {
 private:
     string src;

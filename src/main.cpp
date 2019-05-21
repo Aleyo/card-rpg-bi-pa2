@@ -113,7 +113,7 @@ int main() {
                 continue;
             Game("./examples/save.txt");
         } else if (option == '4') {
-            exit(1);
+            exit(0);
         }
     }
 

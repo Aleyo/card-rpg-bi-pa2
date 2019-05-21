@@ -11,6 +11,9 @@ class Hero;
 
 using namespace std;
 
+/*!
+ * \brief Contains all the details about card.
+ */
 class Card {
 protected:
     const int id;
@@ -24,6 +27,11 @@ public:
          int manaCost, const string & name,
          const string & text, vector<string> effects);
 
+    /*!
+     * \brief Method that execute all effects on a card on specified caster and target.
+     * \param me - pointer to first hero
+     * \param enemy - pointer to enemy hero
+     */
     void makeEffects(Hero * me, Hero * enemy);
 
     int getId () const { return this->id; }

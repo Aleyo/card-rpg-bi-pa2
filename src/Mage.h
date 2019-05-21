@@ -16,6 +16,11 @@ public:
     void removeShield (int amount);
     void addShield (int amount);
 
+    /*!
+     * \brief Overriden method for removing health. On mage it first checks if shields are active. If they are,
+     * then it removes shields and then health.
+     * \param amount - how much damage to inflict
+     */
     void removeHealth( int amount );
 
     int getCurrShield() const { return this->currShield; }
