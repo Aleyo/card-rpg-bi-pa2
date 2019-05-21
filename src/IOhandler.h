@@ -2,6 +2,7 @@
 #define CARDRPG_IOHANDLER_H
 
 #include <iostream>
+#include <algorithm>
 #include <fstream>
 #include <map>
 #include <vector>
